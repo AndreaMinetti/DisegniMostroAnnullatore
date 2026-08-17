@@ -19,14 +19,6 @@
   const honeypot = document.querySelector("#website-field");
   const instagramLink = document.querySelector("#instagram-link");
   const contactEmailLink = document.querySelector("#contact-email");
-  const mainContent = document.querySelector("#main-content");
-  const resultScreen = document.querySelector("#result-screen");
-  const resultIcon = document.querySelector("#result-icon");
-  const resultEyebrow = document.querySelector("#result-eyebrow");
-  const resultTitle = document.querySelector("#result-title");
-  const resultMessage = document.querySelector("#result-message");
-  const sendAnotherButton = document.querySelector("#send-another-button");
-  const resultInstagramLink = document.querySelector("#result-instagram-link");
 
   let selectedFile = null;
   let previewUrl = null;
@@ -34,7 +26,6 @@
   const config = window.APP_CONFIG || {};
 
   instagramLink.href = config.instagramUrl || "#";
-  resultInstagramLink.href = config.instagramUrl || "#";
   contactEmailLink.textContent = config.contactEmail || "INSERISCI_EMAIL";
   contactEmailLink.href = config.contactEmail
     ? `mailto:${config.contactEmail}`
@@ -50,35 +41,6 @@
     fileInput.disabled = isBusy;
     consentInput.disabled = isBusy;
     submitButton.textContent = isBusy ? "Invio in corso…" : "Invia il disegno";
-  }
-
-  function showResultScreen(type, message) {
-    const isSuccess = type === "success";
-
-    mainContent.hidden = true;
-    resultScreen.hidden = false;
-    resultScreen.classList.toggle("is-error", !isSuccess);
-
-    resultIcon.textContent = isSuccess ? "✓" : "!";
-    resultEyebrow.textContent = isSuccess ? "INVIO COMPLETATO" : "QUALCOSA È ANDATO STORTO";
-    resultTitle.textContent = isSuccess ? "Grazie!" : "Invio non riuscito";
-    resultMessage.textContent = message;
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function showUploadScreen() {
-    resultScreen.hidden = true;
-    resultScreen.classList.remove("is-error");
-    mainContent.hidden = false;
-
-    clearPreview();
-    consentInput.checked = false;
-    honeypot.value = "";
-    setStatus("");
-    setBusy(false);
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function clearPreview() {
@@ -356,24 +318,20 @@
 
       clearPreview();
       consentInput.checked = false;
-
-      showResultScreen(
-        "success",
-        "Il disegno è stato ricevuto e sarà controllato prima di qualsiasi pubblicazione."
+      setStatus(
+        "Grazie! Il disegno è stato ricevuto e sarà controllato prima di qualsiasi pubblicazione.",
+        "success"
       );
     } catch (error) {
       console.error(error);
-
-      const message =
+      setStatus(
         error instanceof Error
           ? error.message
-          : "Si è verificato un errore durante l’invio. Riprova.";
-
-      showResultScreen("error", message);
+          : "Si è verificato un errore. Riprova.",
+        "error"
+      );
     } finally {
       setBusy(false);
     }
   });
-
-  sendAnotherButton.addEventListener("click", showUploadScreen);
 })();

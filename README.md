@@ -159,11 +159,7 @@ galleria-disegni-bambini/
 ```
 
 
-## Schermata di conferma
+## Hero illustrata
 
-Dopo ogni tentativo di invio, il form viene sostituito da una schermata dedicata:
-
-- **successo**: conferma che il disegno è stato ricevuto;
-- **errore**: mostra il motivo disponibile dell'errore;
-- in entrambi i casi è presente il pulsante **Invia un altro disegno**;
-- il pulsante riporta al form vuoto, pronto per un nuovo caricamento.
+La cartella include anche `hero.jpg`, già collegata alla testata iniziale del sito.
+Se vuoi sostituirla in futuro, basta rimpiazzare quel file con un'altra immagine mantenendo lo stesso nome.
