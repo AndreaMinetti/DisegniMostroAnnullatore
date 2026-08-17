@@ -157,3 +157,13 @@ galleria-disegni-bambini/
 ├── robots.txt
 └── README.md
 ```
+
+
+## Schermata di conferma
+
+Dopo ogni tentativo di invio, il form viene sostituito da una schermata dedicata:
+
+- **successo**: conferma che il disegno è stato ricevuto;
+- **errore**: mostra il motivo disponibile dell'errore;
+- in entrambi i casi è presente il pulsante **Invia un altro disegno**;
+- il pulsante riporta al form vuoto, pronto per un nuovo caricamento.

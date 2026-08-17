@@ -16,6 +16,7 @@
       <div class="decor decor-one" aria-hidden="true"></div>
       <div class="decor decor-two" aria-hidden="true"></div>
 
+      <div id="main-content">
       <header class="hero">
         <p class="eyebrow">UN DISEGNO PER IL MOSTRO ANNULLATORE</p>
         <h1 id="page-title">La galleria dei piccoli artisti</h1>
@@ -39,10 +40,10 @@
       <div class="divider" aria-hidden="true"></div>
 
       <section class="upload-section" aria-labelledby="upload-title">
-        <h2 id="upload-title">Invia il tuo disegno</h2>
+        <h2 id="upload-title">Invia il disegno</h2>
         <p class="section-copy">
           Carica soltanto la foto del disegno. Non inserire volti, nomi completi,
-          scuola, indirizzo o altri dati personali. Cerca di farla piu nitida possibile. 
+          scuola, indirizzo o altri dati personali. Cerca di farla piu nitida possibile.
         </p>
 
         <form id="upload-form" novalidate>
@@ -115,6 +116,30 @@
           </p>
         </div>
       </details>
+      </div>
+
+      <section id="result-screen" class="result-screen" hidden aria-live="polite">
+        <div id="result-icon" class="result-icon" aria-hidden="true">✓</div>
+        <p id="result-eyebrow" class="eyebrow">INVIO COMPLETATO</p>
+        <h2 id="result-title">Grazie!</h2>
+        <p id="result-message" class="result-copy">
+          Il disegno è stato ricevuto e sarà controllato prima di qualsiasi pubblicazione.
+        </p>
+
+        <button id="send-another-button" class="button button-primary" type="button">
+          Invia un altro disegno
+        </button>
+
+        <a
+          id="result-instagram-link"
+          class="button button-secondary result-instagram"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Guarda la galleria su Instagram
+        </a>
+      </section>
     </section>
   </main>
 
