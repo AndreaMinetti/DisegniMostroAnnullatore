@@ -7,14 +7,14 @@ window.APP_CONFIG = {
   projectName: "La galleria dei piccoli artisti",
 
   // Esempio: https://abcdefghijk.supabase.co
-  supabaseUrl: "INSERISCI_SUPABASE_URL",
+  supabaseUrl: "https://ndtftbwzpcevlbluhxin.supabase.co",
 
   // Usa la chiave "Publishable key" (o legacy "anon public"), non la secret key.
-  supabasePublishableKey: "INSERISCI_SUPABASE_PUBLISHABLE_KEY",
+  supabasePublishableKey: "sb_publishable_y9BXd_SRgl0NGgbO3VM49g_R-fmxFO7",
 
   // Inserisci l'URL completo del profilo Instagram.
-  instagramUrl: "https://www.instagram.com/INSERISCI_PROFILO/",
+  instagramUrl: "https://www.instagram.com/ilmostroannullatore/",
 
   // Email usata solo per eventuali richieste di rimozione.
-  contactEmail: "INSERISCI_EMAIL"
+  contactEmail: "spark@pantechne.art"
 };
