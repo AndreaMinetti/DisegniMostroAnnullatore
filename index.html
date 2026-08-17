@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Invia un disegno alla galleria del progetto.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>La galleria dei piccoli artisti</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="card" aria-labelledby="page-title">
+      <div class="decor decor-one" aria-hidden="true"></div>
+      <div class="decor decor-two" aria-hidden="true"></div>
+
+      <header class="hero">
+        <p class="eyebrow">UN DISEGNO, UNA STORIA</p>
+        <h1 id="page-title">La galleria dei piccoli artisti</h1>
+        <p class="intro">
+          Hai completato il disegno del libro? Chiedi a un genitore o tutore
+          di fotografarlo e inviarlo qui. Dopo un controllo, alcuni disegni
+          potranno essere pubblicati anonimamente sulla pagina Instagram del progetto.
+        </p>
+
+        <a
+          id="instagram-link"
+          class="button button-secondary"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Guarda la galleria su Instagram
+        </a>
+      </header>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="upload-section" aria-labelledby="upload-title">
+        <h2 id="upload-title">Invia il disegno</h2>
+        <p class="section-copy">
+          Carica una foto nitida del solo disegno. Non inserire volti, nomi completi,
+          scuola, indirizzo o altri dati personali.
+        </p>
+
+        <form id="upload-form" novalidate>
+          <div id="drop-zone" class="drop-zone">
+            <input
+              id="drawing-file"
+              class="file-input"
+              type="file"
+              accept="image/*"
+              aria-describedby="file-help"
+              required
+            >
+
+            <label for="drawing-file" class="file-label">
+              <span class="upload-icon" aria-hidden="true">↑</span>
+              <span class="file-label-title">Scegli una foto</span>
+              <span id="file-help" class="file-label-help">
+                JPG, PNG, WEBP o altra immagine leggibile dal dispositivo · massimo 15 MB
+              </span>
+            </label>
+          </div>
+
+          <div id="preview-wrapper" class="preview-wrapper" hidden>
+            <img id="image-preview" alt="Anteprima del disegno selezionato">
+            <button id="remove-file" class="text-button" type="button">
+              Rimuovi immagine
+            </button>
+          </div>
+
+          <label class="consent-row">
+            <input id="parent-consent" type="checkbox" required>
+            <span>
+              Confermo di essere il genitore, tutore o un adulto autorizzato.
+              Autorizzo l’invio e l’eventuale pubblicazione anonima del disegno
+              sul profilo Instagram del progetto e confermo di avere verificato
+              che l’immagine non contenga dati personali del minore.
+            </span>
+          </label>
+
+          <label class="honeypot" aria-hidden="true">
+            Non compilare questo campo
+            <input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off">
+          </label>
+
+          <button id="submit-button" class="button button-primary" type="submit">
+            Invia il disegno
+          </button>
+
+          <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <details class="privacy-note">
+        <summary>Informazioni sulla privacy</summary>
+        <div>
+          <p>
+            Non chiediamo nome, email, età o registrazione. Prima dell’invio,
+            l’immagine viene ridimensionata e salvata nuovamente per rimuovere
+            i metadati fotografici più comuni. Il file viene archiviato in uno
+            spazio privato e non è pubblicato automaticamente.
+          </p>
+          <p>
+            I disegni vengono controllati manualmente. Quelli non idonei vengono
+            scartati. Per richiedere la rimozione di un disegno già pubblicato,
+            scrivi a <a id="contact-email" href="#">INSERISCI_EMAIL</a>.
+          </p>
+          <p>
+            Nota: nessun servizio online può garantire anonimato tecnico assoluto;
+            il fornitore dell’infrastruttura può conservare log tecnici di sicurezza.
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
